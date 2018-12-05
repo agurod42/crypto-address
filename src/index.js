@@ -4,13 +4,14 @@ const express = require('express');
 const app = express();
 
 app.get('/:address', (req, res) => {
-    var currency = cryptoaddress.detect(req.params.address);
+    let currency = cryptoaddress.detect(req.params.address);
     cryptoaddress.balance(req.params.address, currency).then(balance => {
-        res.send({
+        let o = {
             address: req.params.address,
             currency: currency,
             balance: balance,
-        });
+        };
+        res.send(req.query.field ? o[req.query.field] : o);
     });
 });
 
