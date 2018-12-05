@@ -1,0 +1,19 @@
+{
+  "name": "crypto-address",
+  "version": "1.0.0",
+  "description": "Minimal service to detect which cryptocurrency an address corresponds to and show its balance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agurodriguez/crypto-address.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agurodriguez/crypto-address/issues"
+  },
+  "homepage": "https://github.com/agurodriguez/crypto-address#readme"
+}
