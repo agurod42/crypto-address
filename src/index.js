@@ -5,11 +5,12 @@ const app = express();
 
 app.get('/:address', (req, res) => {
     var currency = cryptoaddress.detect(req.params.address);
-    var balance = cryptoaddress[currency].balance(req.params.address);
-    res.send({
-        address: req.params.address,
-        currency: currency,
-        balance: balance,
+    cryptoaddress.balance(req.params.address, currency).then(balance => {
+        res.send({
+            address: req.params.address,
+            currency: currency,
+            balance: balance,
+        });
     });
 });
 
