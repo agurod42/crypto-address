@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/agurodriguez/crypto-address#readme",
   "dependencies": {
+    "bignumber.js": "^8.0.1",
     "express": "^4.16.4",
     "wallet-address-validator": "^0.2.4"
   },
