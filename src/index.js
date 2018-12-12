@@ -11,10 +11,17 @@ app.get('/:address', (req, res) => {
         .then(balance => {
             var o = {
                 address: req.params.address,
-                currency: currency,
+                currency: currency.toUpperCase(),
                 balance: balance,
             };
-            res.json(req.query.field ? o[req.query.field] : o);
+
+            if (req.query.field) {
+                var v = req.query.field.split(' ').map(f => o[f]).join(' ');
+                res.json(v);
+            }
+            else {
+                res.json(o);
+            }
         });
 });
 
